@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 
 class CalculatorController: UIViewController {
     //IBOutlet
@@ -37,6 +38,7 @@ class CalculatorController: UIViewController {
                 displayNumber = 0
             }
         }
+
         return displayNumber
     }
 
@@ -89,12 +91,15 @@ class CalculatorController: UIViewController {
     
     //清空值
     func numberClear() {
-        calculatorResultLabel.text = "\(displayNumber)"
+        calculatorResultLabel.text = "\(Int(displayNumber))"
         keyCount = 0
     }
     
+
+    
     @IBAction func equalBtn(_ sender: Any) {
         mathEqual(second: displayNumber)
+        
         if mathPlus == true {
             let resultNumber = tempNumber1 + tempNumber2
             calculatorResultLabel.text = "\(resultNumber)"
@@ -111,6 +116,8 @@ class CalculatorController: UIViewController {
             let resultNumber = tempNumber1 / tempNumber2
             calculatorResultLabel.text = "\(resultNumber)"
             displayNumber = resultNumber
+        } else {
+
         }
        
     }
@@ -141,43 +148,43 @@ class CalculatorController: UIViewController {
     
     @IBAction func number0Btn(_ sender: Any) {
         addNumber(number:0)
-        calculatorResultLabel.text = "\(displayNumber)"
+        calculatorResultLabel.text = "\(Int(displayNumber))"
     }
     @IBAction func number1Btn(_ sender: Any) {
         addNumber(number:1)
-        calculatorResultLabel.text = "\(displayNumber)"
+        calculatorResultLabel.text = "\(Int(displayNumber))"
     }
     @IBAction func number2Btn(_ sender: Any) {
         addNumber(number:2)
-        calculatorResultLabel.text = "\(displayNumber)"
+        calculatorResultLabel.text = "\(Int(displayNumber))"
     }
     @IBAction func number3Btn(_ sender: Any) {
         addNumber(number:3)
-        calculatorResultLabel.text = "\(displayNumber)"
+        calculatorResultLabel.text = "\(Int(displayNumber))"
     }
     @IBAction func number4Btn(_ sender: Any) {
         addNumber(number:4)
-        calculatorResultLabel.text = "\(displayNumber)"
+        calculatorResultLabel.text = "\(Int(displayNumber))"
     }
     @IBAction func number5Btn(_ sender: Any) {
         addNumber(number:5)
-        calculatorResultLabel.text = "\(displayNumber)"
+        calculatorResultLabel.text = "\(Int(displayNumber))"
     }
     @IBAction func number6Btn(_ sender: Any) {
         addNumber(number:6)
-        calculatorResultLabel.text = "\(displayNumber)"
+        calculatorResultLabel.text = "\(Int(displayNumber))"
     }
     @IBAction func number7Btn(_ sender: Any) {
         addNumber(number:7)
-        calculatorResultLabel.text = "\(displayNumber)"
+        calculatorResultLabel.text = "\(Int(displayNumber))"
     }
     @IBAction func number8Btn(_ sender: Any) {
         addNumber(number:8)
-        calculatorResultLabel.text = "\(displayNumber)"
+        calculatorResultLabel.text = "\(Int(displayNumber))"
     }
     @IBAction func number9Btn(_ sender: Any) {
         addNumber(number:9)
-        calculatorResultLabel.text = "\(displayNumber)"
+        calculatorResultLabel.text = "\(Int(displayNumber))"
     }
     @IBAction func numberDotBtn(_ sender: Any) {
 
