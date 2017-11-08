@@ -13,12 +13,12 @@ class CalculatorController: UIViewController {
     @IBOutlet weak var calculatorResultLabel: UILabel!
     
     //宣告
-    var keyCount = 0
-    var inputSecond = 0
-    var displayNumber = 0
-    var firstNumber = 0
-    var tempNumber1 = 0
-    var tempNumber2 = 0
+    var keyCount:Double = 0
+    var inputSecond:Double = 0
+    var displayNumber:Double = 0
+    var firstNumber:Double = 0
+    var tempNumber1:Double = 0
+    var tempNumber2:Double = 0
     var mathPlus = false
     var mathMius = false
     var mathMultiply = false
@@ -26,7 +26,7 @@ class CalculatorController: UIViewController {
 
 
     //顯示第一組輸入數字
-    func addNumber(number:Int) -> Int {
+    func addNumber(number:Double) -> Double {
         if keyCount <= 10 {
             keyCount += 1
             if keyCount == 1 {
@@ -42,47 +42,47 @@ class CalculatorController: UIViewController {
 
     
     //加法
-    func mathPlus(first:Int) -> Int {
+    func mathPlus(first:Double) -> Double {
         mathPlus = true
         mathMius = false
         mathMultiply = false
         mathDivide = false
         tempNumber1 = first
-        //print(firstNumber)
+        //prDouble(firstNumber)
         return first
     }
     //減法
-    func mathMius(first:Int) -> Int {
+    func mathMius(first:Double) -> Double {
         mathPlus = false
         mathMius = true
         mathMultiply = false
         mathDivide = false
         tempNumber1 = first
-        //print(firstNumber)
+        //prDouble(firstNumber)
         return first
     }
     //乘法
-    func mathMultiply(first:Int) -> Int {
+    func mathMultiply(first:Double) -> Double {
         mathPlus = false
         mathMius = false
         mathMultiply = true
         mathDivide = false
         tempNumber1 = first
-        //print(firstNumber)
+        //prDouble(firstNumber)
         return first
     }
     //除法
-    func mathDivide(first:Int) -> Int {
+    func mathDivide(first:Double) -> Double {
         mathPlus = false
         mathMius = false
         mathMultiply = false
         mathDivide = true
         tempNumber1 = first
-        //print(firstNumber)
+        //prDouble(firstNumber)
         return first
     }
     //顯示運算結果
-    func mathEqual(second:Int) -> Int  {
+    func mathEqual(second:Double) -> Double  {
         tempNumber2 = second
         return second
     }
@@ -133,16 +133,11 @@ class CalculatorController: UIViewController {
         mathDivide(first: displayNumber)
     }
     
-   
-    
-    
-    
     @IBAction func allCleralBtn(_ sender: Any) {
         calculatorResultLabel.text = "0"
+        displayNumber = 0
         keyCount = 0
     }
-    
-    
     
     @IBAction func number0Btn(_ sender: Any) {
         addNumber(number:0)
